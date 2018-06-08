@@ -1,0 +1,70 @@
+.mainDiv{
+	width: 100%;
+	text-align:center;
+}
+
+.textFrom{
+	display: inline-block;
+	min-width: 600px;
+	width:40%;
+	margin-left: 5px;
+}
+
+footer{
+	width: 100%;
+	text-align: center;
+	position: fixed ;
+	margin-bottom: 0;
+}
+
+.CodeMirror {
+    font-family: monospace;
+    height: 300px;
+    border: 1px solid #ddd;
+    color: black;
+    text-align:left;
+}
+
+.greenButton{
+    background: #1d8449;
+    color: #fff;
+    background: #295;
+    border: 1px solid #1d8449;
+    font-size: 21px;
+    padding: 0.5em 0.8em;
+    border-radius: 0.2em;
+}
+
+.textarea-label{
+	font-size: 10px;
+    z-index: 100;
+    border: 1px solid #ccc;
+    padding: 4px 10px;
+    color: #585858;
+    background-color: #ecebeb;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-letter-spacing: 0.05em;
+    -moz-letter-spacing: 0.05em;
+    -ms-letter-spacing: 0.05em;
+    letter-spacing: 0.05em;
+    display: inline-block; overflow: hidden; 
+	width:96%;
+}
+.home-hero{
+	background: #196f3e;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 2em;
+    opacity: 0.9;
+    position: relative;
+    color: #fbfbfb;
+    margin-bottom: 10px
+}

@@ -51,6 +51,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<spring.version>3.2.13.RELEASE</spring.version>
 	<jstl.version>1.2</jstl.version>
+	<log4j.version>2.11.0</log4j.version>
   </properties>
   
    <dependencies>
@@ -63,6 +64,16 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>${jstl.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-api</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-core</artifactId>
+			<version>${log4j.version}</version>
 		</dependency>
 		<dependency>
 		   <groupId>com.barrouh</groupId>

@@ -9,11 +9,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.barrouh.textdiffchecker.TextDiffChecker;
+import com.barrouh.textdiffchecker.beans.FinalDifferences;
+import com.barrouh.textdiffchecker.beans.Utils;
+
 @Controller
 public class DemoController {
 
 	final static Logger LOGGER = LogManager.getLogger(DemoController.class);
 
+	private TextDiffChecker textDiffChecker = new  TextDiffChecker();
+	
+	private Utils  textDiffCheckerUtils = new Utils();
+	
+	private FinalDifferences finalDiffs = new FinalDifferences();
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
@@ -32,11 +41,20 @@ public class DemoController {
 		String htmlResult="";
 		ModelAndView model = new ModelAndView();
 		
-		System.out.println(originalText);
-		System.out.println(changedText);
+		LOGGER.info("Start Prossisng tow texts Differences");
+		
+		textDiffChecker.setChangedText(changedText);
+		
+		textDiffChecker.setOriginalText(originalText);
+		
+		finalDiffs=textDiffChecker.getFinalDifferences();
+		
+		htmlResult=textDiffCheckerUtils.convertToHtml(finalDiffs);	
+		
+		LOGGER.info("End  Prossisng tow texts Differences");
 		
 		model.setViewName("index");
-		model.addObject("msg", htmlResult);
+		model.addObject("htmlResult", htmlResult);
 
 		return model;
 

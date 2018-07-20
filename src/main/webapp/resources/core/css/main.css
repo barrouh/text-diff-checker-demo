@@ -2,11 +2,17 @@
 	width: 100%;
 	text-align:center;
 }
-
+.resultDiv{
+	border: 1px solid #1d8449;
+	width: 95%;
+	margin:0 auto;
+	padding:10px;
+	margin-bottom:20px;
+}
 .textFrom{
 	display: inline-block;
 	min-width: 600px;
-	width:40%;
+	width:48%;
 	margin-left: 5px;
 }
 

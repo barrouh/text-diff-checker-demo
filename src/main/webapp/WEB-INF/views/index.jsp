@@ -10,7 +10,6 @@
 	<link href="${bootstrapCss}" rel="stylesheet" />
 	<link href="${codemirrorCss}" rel="stylesheet" />
 	<link href="${coreCss}" rel="stylesheet" />
-	
 </head>
 <body>
 
@@ -20,8 +19,11 @@
 		<strong>Find Difference!</strong>
 		</span>
 </div>
+<div class="resultDiv">
+${htmlResult}
+</div>
 <div class=" mainDiv">
-	<form id="myForm">
+	<form id="myForm"   method='POST'  action='/checkDiffs'>
 	 	<div class="textFrom col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
 	 	<span class="textarea-label">original text</span>
 	     <textarea id="textFrom1" name="originalText"></textarea>
@@ -57,7 +59,7 @@
 				});
 	</script>
 	<script>
-	    $(document).ready(function(){
+	/* $(document).ready(function(){
 	         $(function(){
 	            $("#myForm").submit(function(event){
 	                event.preventDefault();
@@ -69,7 +71,7 @@
 	                });
 	            });
 	        });
-	    });
+	    });*/
 	</script>
 </body>
 <footer>

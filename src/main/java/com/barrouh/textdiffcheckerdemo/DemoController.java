@@ -16,13 +16,11 @@ import com.barrouh.textdiffchecker.beans.Utils;
 @Controller
 public class DemoController {
 
-	final static Logger LOGGER = LogManager.getLogger(DemoController.class);
+	static final Logger LOGGER = LogManager.getLogger(DemoController.class);
 
 	private TextDiffChecker textDiffChecker = new  TextDiffChecker();
 	
 	private Utils  textDiffCheckerUtils = new Utils();
-	
-	private FinalDifferences finalDiffs = new FinalDifferences();
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
@@ -38,6 +36,9 @@ public class DemoController {
 	public ModelAndView findDiffs( 
 			@RequestParam(value = "originalText", required = true) String originalText,
 			@RequestParam(value = "changedText", required = true) String changedText) {
+		
+		FinalDifferences finalDiffs;
+		
 		String htmlResult="";
 		ModelAndView model = new ModelAndView();
 		

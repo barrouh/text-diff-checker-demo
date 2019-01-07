@@ -1,5 +1,10 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+
+<jsp:useBean id="date" class="java.util.Date" />
+<fmt:formatDate value="${date}" pattern="yyyy" var="currentYear" />
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +15,7 @@
 	<link href="${bootstrapCss}" rel="stylesheet" />
 	<link href="${codemirrorCss}" rel="stylesheet" />
 	<link href="${coreCss}" rel="stylesheet" />
+	<link rel="icon" href="/resources/core/img/diff.png" type="image/png" />
 </head>
 <body>
 
@@ -19,19 +25,20 @@
 		<strong>Find Difference!</strong>
 		</span>
 </div>
-<div class="resultDiv">
-${htmlResult}
+<div class="resultDiv col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	${htmlResult}
 </div>
 <div class=" mainDiv">
+	
 	<form id="myForm"   method='POST'  action='/checkDiffs'>
 	 	<div class="textFrom col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
 	 	<span class="textarea-label">original text</span>
-	     <textarea id="textFrom1" name="originalText"></textarea>
+	     <textarea id="textFrom1" name="originalText">${originalText}</textarea>
 	    </div>
 	    
 	    <div class="textFrom col-xs-12 col-sm-12 col-md-6 col-lg-6 ">
 	    <span class="textarea-label">changed text</span>
-	     <textarea id="textFrom2" name="changedText"></textarea>
+	     <textarea id="textFrom2" name="changedText">${changedText}</textarea>
 	    </div>
 		<br>
 		<button type="submit" class="greenButton">Find Difference!</button>
@@ -56,25 +63,12 @@ ${htmlResult}
 			  lineNumbers: true,
 			  extraKeys: {"Ctrl-Space": "autocomplete"},
 			  mode: {name: "javascript", globalVars: true}
-				});
+		});
 	</script>
-	<script>
-	/* $(document).ready(function(){
-	         $(function(){
-	            $("#myForm").submit(function(event){
-	                event.preventDefault();
-	                $.ajax({
-	                    method: 'POST',
-	                    url: '/checkDiffs',
-	                    data : $('#myForm').serialize(),
-	                    error: function(xhr, desc, err){console.log(err);}
-	                });
-	            });
-	        });
-	    });*/
-	</script>
+
 </body>
+
 <footer>
-	<p>© Barrouh.com 2018</p>
+	<p> Made in Morocco By <a href="https://github.com/barrouh"  target="_blank">Mohamed Barrouh</a> © ${currentYear}</p>
 </footer>
 </html>

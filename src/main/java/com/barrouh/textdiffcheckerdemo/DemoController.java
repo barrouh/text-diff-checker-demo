@@ -62,9 +62,9 @@ public class DemoController {
 		
 		model.addObject("htmlResult", htmlResult);
 		
-		model.addObject("removals", textDiffChecker.getRemovals().toString());
+		//model.addObject("removals", textDiffChecker.getRemovals().toString());
 		
-		model.addObject("additions", textDiffChecker.getAdditions().toString());
+		//model.addObject("additions", textDiffChecker.getAdditions().toString());
 		
 		model.addObject("originalText", originalText);
 		

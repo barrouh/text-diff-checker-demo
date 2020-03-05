@@ -69,7 +69,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.barrouh</groupId>
-			<artifactId>TextDiffChecker</artifactId>
+			<artifactId>text-diff-checker</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
